@@ -12,11 +12,18 @@ const nameTabGroup = (groupId) => {
 // Group Tabs //
 const groupTabs = (tab) => {
     if (tab.openerTabId && tab.pendingUrl && !(tab.pendingUrl.includes("newtab")) && tab.groupId === -1) {
-        chrome.tabs.group({
-            tabIds: [tab.openerTabId, tab.id]
-        }, (groupId) => {
-            nameTabGroup(groupId);
-        });
+        chrome.tabs.get(tab.openerTabId, (openerTab) => {
+            if (!openerTab.pinned) {
+                chrome.tabs.group({
+                    tabIds: [tab.openerTabId, tab.id]
+                }, (groupId) => {
+                    nameTabGroup(groupId);
+                });
+            }
+        })
+
+
+        
     }
 }
 
@@ -82,7 +89,7 @@ chrome.commands.onCommand.addListener((command) => {
                     }
                 })
             }
-            
+
         })
     }
 });
