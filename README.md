@@ -6,10 +6,10 @@ Features:<br>
 ✅ Auto Disband Groups with only 1 tabs (togglable)<br>
 ✅ Alt+T Shortcut (shortcut changable/deletable)
 
+Tested on:<br>
+- Chrome Stable: 126.0.6478.126
+- Brave	Stable: 1.67.123 (Chromium: 126.0.6478.126)
 ## 1. Automatic Tab Groups Creation
-
-
-
 | No Tab Group Name     | ![](https://github.com/SpookyKipper/TabIslandsForChrome/blob/main/repo_assets/AutoCreateNoName.gif)      | 
 | ------------- | ------------- | 
 | Custom Tab Group Name          | ![](https://github.com/SpookyKipper/TabIslandsForChrome/blob/main/repo_assets/AutoCreateWithName.gif)         | 
