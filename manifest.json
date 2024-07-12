@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Islands for Chrome",
+  "description": "A recreation of the Automatic Tab Islands creation feature from the Opera One browser.",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "tab_islands.png"
+  },
+  "icons": {
+    "16": "tab_islands.png",
+    "32": "tab_islands.png",
+    "64": "tab_islands.png",
+    "128": "tab_islands.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs", "tabGroups", "storage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["content.js"]
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "commands": {
+      "newTabInGroup": {
+         "description": "New tab in Island/Group",
+         "suggested_key": {
+            "default": "Alt+T"
+         }
+      }
+   }
+}

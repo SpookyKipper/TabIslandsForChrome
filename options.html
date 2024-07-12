@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Test Extension Options</title>
+  </head>
+  <body>
+    <label>
+        Name for automatically created groups (Empty for none)<br>
+        <input type="text" id="auto_created_group_name" value="Island">
+    </label><br><hr>
+    <label>
+      <input type="checkbox" id="auto_disband_group" />
+      Disband Groups with only 1 tab in it <br>
+      ^ May lag while closing tabs if there are too many groups<br>
+      ^ Browser Restart or Extension Reload Required after change
+    </label>
+<br><hr>
+    <div id="status"></div>
+    <button id="save">Save</button>
+
+    <script src="options.js"></script>
+  </body>
+</html>
