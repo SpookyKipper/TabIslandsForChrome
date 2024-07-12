@@ -71,15 +71,18 @@ chrome.commands.onCommand.addListener((command) => {
     if (command === "newTabInGroup") {
         chrome.tabs.query({active: true}, (tabs) => {
             const tab = tabs[0];
-            chrome.tabs.create({active: true, index: tab.index+1}, (newtab) => {
-                if (tab.groupId >= 0) {
-                    chrome.tabs.group({tabIds: [newtab.id], groupId: tab.groupId})
-                } else {
-                    chrome.tabs.group({tabIds: [newtab.id, tab.id]}, (groupId) => {
-                        nameTabGroup(groupId);
-                    })
-                }
-            })
+            if (!tab.pinned) {
+                chrome.tabs.create({active: true, index: tab.index+1}, (newtab) => {
+                    if (tab.groupId >= 0) {
+                        chrome.tabs.group({tabIds: [newtab.id], groupId: tab.groupId})
+                    } else {
+                        chrome.tabs.group({tabIds: [newtab.id, tab.id]}, (groupId) => {
+                            nameTabGroup(groupId);
+                        })
+                    }
+                })
+            }
+            
         })
     }
 });
