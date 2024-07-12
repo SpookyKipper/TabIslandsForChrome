@@ -6,9 +6,18 @@ Features:<br>
 ✅ Auto Disband Groups with only 1 tabs (togglable)<br>
 ✅ Alt+T Shortcut (shortcut changable/deletable)
 
-Tested on:<br>
+---
+👍 Tested **working** on:<br>
 - Chrome Stable: 126.0.6478.126
 - Brave	Stable: 1.67.123 (Chromium: 126.0.6478.126)
+
+👎 Tested **broken/behaves strangely** on:<br>
+- Opera Stable: 112.0.5197.24 (Chromium: 126.0.6478.62)
+  - You don't need this extension on opera anyways
+---
+⚠️ Using any third-party newtab extensions or a custom newtab page may break extension functionality
+
+---
 ## 1. Automatic Tab Groups Creation
 | No Tab Group Name     | ![](https://github.com/SpookyKipper/TabIslandsForChrome/blob/main/repo_assets/AutoCreateNoName.gif)      | 
 | ------------- | ------------- | 
