@@ -21,7 +21,6 @@
   "permissions": [
     "tabs", "tabGroups", "storage"
   ],
-  "host_permissions": ["<all_urls>"],
   "content_scripts": [
     {
         "matches": ["http://*/*", "https://*/*"],
