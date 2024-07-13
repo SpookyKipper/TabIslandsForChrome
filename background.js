@@ -10,8 +10,28 @@ const nameTabGroup = (groupId) => {
       );
 }
 // Group Tabs //
+    // Check if pending url is here //
 const groupTabs = (tab) => {
-    if (tab.openerTabId && tab.pendingUrl && !(tab.pendingUrl.includes("newtab")) && tab.groupId === -1) {
+    console.log(tab);
+    if ((tab.pendingUrl !== "" && typeof(tab.pendingUrl) != "undefined")) {
+      //  console.log("success" + tab)
+        groupTabsAction(tab);
+    } else {
+      //  console.log("failed" + tab)
+        setTimeout(() => {
+            checkTab(tab);
+        }, 10)
+    }
+}
+    // re-get tab info //
+const checkTab = (tab) => {
+    chrome.tabs.get(tab.id, (tab) => {
+        groupTabs(tab);
+    });
+}
+    // actually group the tabs //
+const groupTabsAction = (tab) => {
+    if (tab.openerTabId && !(tab.pendingUrl.includes("chrome://")) && !(tab.pendingUrl.includes("extension://")) && tab.groupId === -1) {
         chrome.tabs.get(tab.openerTabId, (openerTab) => {
             if (!openerTab.pinned) {
                 chrome.tabs.group({
@@ -20,16 +40,14 @@ const groupTabs = (tab) => {
                     nameTabGroup(groupId);
                 });
             }
-        })
-
-
-        
+        })  
     }
 }
 
 // Detect New Tabs opened via Middle Click //
 setTimeout(() => {
     chrome.tabs.onCreated.addListener((tab) => {
+        console.log("new tab created");
         groupTabs(tab);
     });
 }, 2500);
