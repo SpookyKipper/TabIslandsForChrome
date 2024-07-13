@@ -10,6 +10,9 @@ Features:<br>
 👍 Tested **working** on:<br>
 - Chrome Stable: 126.0.6478.126
 - Brave	Stable: 1.67.123 (Chromium: 126.0.6478.126)
+- Microsoft Edge 126.0.2592.87
+  
+You may need to download the source, extract it, than load unpacked if you get `This extension is not from any known source, and may have been added without your knowledge.` with the crx file
 
 👎 Tested **broken/behaves strangely** on:<br>
 - Opera Stable: 112.0.5197.24 (Chromium: 126.0.6478.62)
@@ -32,7 +35,7 @@ Can be toggled via extension options
 
 ## 3. Alt+T Shortcut 
 No Mouse Click is involved <br>
-Changable/deletable via chrome://extensions/shortcuts
+Changable/deletable via `chrome://extensions/shortcuts`
 | Active Tab not in group: <br> Create new group | ![](https://github.com/SpookyKipper/TabIslandsForChrome/blob/main/repo_assets/AltPlusT.gif) |
 | ------------- | ------------- |
 | Active Tab already in group: <br> Add to existing gruop | ![AltPlusT_InGroup](https://github.com/user-attachments/assets/514657e2-44a1-456c-9875-4f14bd333b8d)
