@@ -31,7 +31,7 @@ const checkTab = (tab) => {
 }
     // actually group the tabs //
 const groupTabsAction = (tab) => {
-    if (tab.openerTabId && !(tab.pendingUrl.includes("chrome://")) && !(tab.pendingUrl.includes("extension://")) && tab.groupId === -1) {
+    if (tab.openerTabId && !(tab.pendingUrl.includes("chrome://")) && !(tab.pendingUrl.includes("extension://")) && !(tab.pendingUrl.includes("ntp.msn")) && tab.groupId === -1) {
         chrome.tabs.get(tab.openerTabId, (openerTab) => {
             if (!openerTab.pinned) {
                 chrome.tabs.group({
@@ -50,7 +50,7 @@ setTimeout(() => {
         console.log("new tab created");
         groupTabs(tab);
     });
-}, 2500);
+}, 10);
 
 // Detect New Tabs opened via Anchor Tag with _blank target //
 chrome.runtime.onMessage.addListener((message) => {
