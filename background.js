@@ -30,14 +30,15 @@ const nameTabGroup = (groupId, url) => {
     chrome.storage.sync.get(
         { auto_created_group_name: "Island", auto_created_group_name_search_engine: "" },
         (items) => {
+            let group_name_processed = "";
             if (items.auto_created_group_name != "") {
-                let group_name_processed = items.auto_created_group_name.replaceAll("%domain%", formatDomainTitle(url));
-                if (checkIsSearchEngine && items.auto_created_group_name_search_engine != "") {
-                    const searchQuery = getQueryParam(url, "q");
-                    if (typeof(searchQuery) == "string") group_name_processed = items.auto_created_group_name_search_engine.replaceAll("%search_query%", searchQuery);
-                }
-                chrome.tabGroups.update(groupId, { title: group_name_processed })
+                group_name_processed = items.auto_created_group_name.replaceAll("%domain%", formatDomainTitle(url));
             }
+            if (checkIsSearchEngine && items.auto_created_group_name_search_engine != "") {
+                const searchQuery = getQueryParam(url, "q");
+                if (typeof(searchQuery) == "string") group_name_processed = items.auto_created_group_name_search_engine.replaceAll("%search_query%", searchQuery);
+            }
+            group_name_processed != "" && chrome.tabGroups.update(groupId, { title: group_name_processed })
         }
     );
 }

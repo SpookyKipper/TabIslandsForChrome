@@ -8,15 +8,12 @@ Features:<br>
 
 ---
 👍 Tested **working** on:<br>
-- Chrome Stable: 126.0.6478.126
-- Brave	Stable: 1.67.123 (Chromium: 126.0.6478.126)
-- Microsoft Edge 126.0.2592.87
+- Chrome Stable: 126.0.6478.126 [Linux]
+- Brave	Stable: 1.67.123 (Chromium: 126.0.6478.126) [Linux]
+- Microsoft Edge: 126.0.2592.87 [Win11]
   
-You may need to download the source, extract it, than load unpacked if you get `This extension is not from any known source, and may have been added without your knowledge.` with the crx file
+You may need to download the source, extract it, than load unpacked if you get `This extension is not from any known source, and may have been added without your knowledge.` with the crx file. This will not be required when it is listed on the Chrome Web Store.
 
-👎 Tested **broken/behaves strangely** on:<br>
-- Opera Stable: 112.0.5197.24 (Chromium: 126.0.6478.62)
-  - You don't need this extension on opera anyways
 ---
 ⚠️ Using any third-party newtab extensions or a custom newtab page may break extension functionality
 
