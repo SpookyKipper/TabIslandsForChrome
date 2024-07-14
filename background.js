@@ -1,10 +1,42 @@
+// Format Domain Title /
+const formatDomainTitle = (url) => {
+if (url.includes(".")) {
+    const word = url.split(".")[url.split(".").length-2].replace("https://", "").replace("http://", "")
+    const firstLetter = word.charAt(0)
+    const firstLetterCap = firstLetter.toUpperCase()
+    const remainingLetters = word.slice(1)
+    return (firstLetterCap + remainingLetters);
+}
+return "";
+}
+// Get Query Parameters //
+const getQueryParam = (url, paramName) => {
+const link = new URL(url);
+const params = new URLSearchParams(link.search);
+return (params.get(paramName));
+}
+// Check if url is a search engine //
+const checkIsSearchEngine = (url) => {
+    const isGoogle = url.includes("www.google.com");
+    const isBing = url.includes("bing.com");
+    const isBrave = url.includes("search.brave.com");
+    const isEcosia = url.includes("ecosia.org");
+    const isDDG = url.includes("duckduckgo.com");
+
+    return (isGoogle || isBing || isBrave || isEcosia || isDDG);
+}
 // Tab Group Naming Function //
-const nameTabGroup = (groupId) => {
+const nameTabGroup = (groupId, url) => {
     chrome.storage.sync.get(
-        { auto_created_group_name: "Island" },
+        { auto_created_group_name: "Island", auto_created_group_name_search_engine: "" },
         (items) => {
             if (items.auto_created_group_name != "") {
-                chrome.tabGroups.update(groupId, { title: items.auto_created_group_name })
+                let group_name_processed = items.auto_created_group_name.replaceAll("%domain%", formatDomainTitle(url));
+                if (checkIsSearchEngine && items.auto_created_group_name_search_engine != "") {
+                    const searchQuery = getQueryParam(url, "q");
+                    if (typeof(searchQuery) == "string") group_name_processed = items.auto_created_group_name_search_engine.replaceAll("%search_query%", searchQuery);
+                }
+                chrome.tabGroups.update(groupId, { title: group_name_processed })
             }
         }
     );
@@ -35,7 +67,7 @@ const groupTabsAction = (tab) => {
                 chrome.tabs.group({
                     tabIds: [tab.openerTabId, tab.id]
                 }, (groupId) => {
-                    nameTabGroup(groupId);
+                    nameTabGroup(groupId, openerTab.url);
                 });
             }
         })
@@ -55,15 +87,17 @@ chrome.storage.sync.get(
     (items) => {
         if (items.auto_disband_group) {
             chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
-                chrome.tabGroups.query({}, (info) => {
-                    info.forEach(element => {
-                        chrome.tabs.query({ groupId: element.id }, (tabs) => {
-                            if (tabs.length <= 1) {
-                                chrome.tabs.ungroup(tabs[0].id)
-                            }
+                setTimeout(() => {
+                    chrome.tabGroups.query({}, (info) => {
+                        info.forEach(element => {
+                            chrome.tabs.query({ groupId: element.id }, (tabs) => {
+                                if (tabs.length <= 1) {
+                                    chrome.tabs.ungroup(tabs[0].id)
+                                }
+                            });
                         });
-                    });
-                })
+                    })
+                }, 15);
             });
 
         }
@@ -82,7 +116,7 @@ chrome.commands.onCommand.addListener((command) => {
                         chrome.tabs.group({ tabIds: [newtab.id], groupId: tab.groupId })
                     } else {
                         chrome.tabs.group({ tabIds: [newtab.id, tab.id] }, (groupId) => {
-                            nameTabGroup(groupId);
+                            nameTabGroup(groupId, tab.url);
                         })
                     }
                 })
