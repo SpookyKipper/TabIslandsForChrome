@@ -1,19 +1,30 @@
 // Format Domain Title /
 const formatDomainTitle = (url) => {
-if (url.includes(".")) {
-    const word = url.split(".")[url.split(".").length-2].replace("https://", "").replace("http://", "")
-    const firstLetter = word.charAt(0)
-    const firstLetterCap = firstLetter.toUpperCase()
-    const remainingLetters = word.slice(1)
-    return (firstLetterCap + remainingLetters);
-}
-return "";
+    if (url.includes(".")) {
+        // Remove Paths
+        url = url.split("/")[2];
+        // Remove protocol (http:// or https://) if present
+        url = url.replace(/^(https?:\/\/)?(www\.)?/, '');
+        // Split the domain by dots
+        const parts = url.split('.');
+        // Check if it's a country-specific TLD (e.g., .co.uk)
+        if (parts.length > 2 && parts[parts.length - 2].length <= 3) {
+            word = parts[parts.length - 3];
+        } else {
+            word = parts[parts.length - 2];
+        }
+        const firstLetter = word.charAt(0)
+        const firstLetterCap = firstLetter.toUpperCase()
+        const remainingLetters = word.slice(1)
+        return (firstLetterCap + remainingLetters);
+    }
+    return "";
 }
 // Get Query Parameters //
 const getQueryParam = (url, paramName) => {
-const link = new URL(url);
-const params = new URLSearchParams(link.search);
-return (params.get(paramName));
+    const link = new URL(url);
+    const params = new URLSearchParams(link.search);
+    return (params.get(paramName));
 }
 // Check if url is a search engine //
 const checkIsSearchEngine = (url) => {
@@ -36,7 +47,7 @@ const nameTabGroup = (groupId, url) => {
             }
             if (checkIsSearchEngine && items.auto_created_group_name_search_engine != "") {
                 const searchQuery = getQueryParam(url, "q");
-                if (typeof(searchQuery) == "string") group_name_processed = items.auto_created_group_name_search_engine.replaceAll("%search_query%", searchQuery);
+                if (typeof (searchQuery) == "string") group_name_processed = items.auto_created_group_name_search_engine.replaceAll("%search_query%", searchQuery);
             }
             group_name_processed != "" && chrome.tabGroups.update(groupId, { title: group_name_processed })
         }
