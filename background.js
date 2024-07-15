@@ -57,7 +57,7 @@ const nameTabGroup = (groupId, url) => {
 // Check if pending url is here //
 const groupTabs = (tab) => {
     console.log(tab);
-    if ((tab.pendingUrl !== "" && typeof (tab.pendingUrl) != "undefined")) {
+    if ((typeof (tab.pendingUrl) != "undefined" && tab.pendingUrl !== "")) {
         groupTabsAction(tab);
     } else {
         setTimeout(() => {
@@ -103,13 +103,13 @@ chrome.storage.sync.get(
                     chrome.tabGroups.query({}, (info) => {
                         info.forEach(element => {
                             chrome.tabs.query({ groupId: element.id }, (tabs) => {
-                                if (tabs.length <= 1) {
+                                if (tabs.length == 1) {
                                     chrome.tabs.ungroup(tabs[0].id)
                                 }
                             });
                         });
                     })
-                }, 15);
+                }, 25);
             });
 
         }
