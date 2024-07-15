@@ -16,6 +16,7 @@ Features:<br>
 - Microsoft Edge: 126.0.2592.87 [Win11]
   
 Get the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/tab-islands-for-chrome/bnkppmpbnnedcfoncmkbekokhmfkhoin)
+
 ---
 ⚠️ Using any third-party newtab extensions or a custom newtab page may break extension functionality
 
