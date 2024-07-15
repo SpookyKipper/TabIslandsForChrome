@@ -3,7 +3,8 @@
 
 Features:<br>
 - ✅ Automatic Tab Groups Creation (Custom Tab Group Names)<br>
-  - Default & Search Engine tabs can be set differently!<br>
+  - Default & Search Engine tabs can be set differently!
+  - Supports setting Tab Group names to your search query!
 - ✅ Auto Disband Groups with only 1 tabs (togglable)<br>
 - ✅ Alt+T Shortcut (shortcut changable/deletable)
 
