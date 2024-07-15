@@ -39,7 +39,7 @@ const checkIsSearchEngine = (url) => {
 // Tab Group Naming Function //
 const nameTabGroup = (groupId, url) => {
     chrome.storage.sync.get(
-        { auto_created_group_name: "Island", auto_created_group_name_search_engine: "" },
+        { auto_created_group_name: "%domain%", auto_created_group_name_search_engine: "" },
         (items) => {
             let group_name_processed = "";
             if (items.auto_created_group_name != "") {

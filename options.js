@@ -21,7 +21,7 @@ const saveOptions = () => {
 // stored in chrome.storage.
 const restoreOptions = () => {
   chrome.storage.sync.get(
-    {auto_disband_group: true, auto_created_group_name: "Island", auto_created_group_name_search_engine: "%search_query%"},
+    {auto_disband_group: true, auto_created_group_name: "%domain%", auto_created_group_name_search_engine: "%search_query%"},
     (items) => {
         document.getElementById('auto_disband_group').checked = items.auto_disband_group;
         document.getElementById('auto_created_group_name').value = items.auto_created_group_name;
