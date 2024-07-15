@@ -1,4 +1,5 @@
-# Tab Islands for Chrome
+# Tab Islands for Chrome [<img align="right" src="https://github.com/user-attachments/assets/013973c7-f0ee-4706-986d-e7e3993fc8d6">](https://chromewebstore.google.com/detail/tab-islands-for-chrome/bnkppmpbnnedcfoncmkbekokhmfkhoin)
+
 ### A recreation of the Automatic Tab Islands creation feature from the Opera One browser
 
 Features:<br>
