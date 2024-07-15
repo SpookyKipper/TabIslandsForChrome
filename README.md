@@ -45,14 +45,14 @@ Changable/deletable via `chrome://extensions/shortcuts`
 Settings are available via Extension Popup -> "Go to options" button
 ### Name for automatically created groups (Default)
 This is the name for the Tab Groups being automatically created by the extension. <br>
-Available Variables: *Experimental*<br>
+Available Placeholders: *Experimental*<br>
 - `%domain%`
   - `google.com` will return `Google`
   - `web.whatsapp.com` will return `Whatsapp`
   - `www.google.com.hk` will return `Google`
 ### Name for automatically created groups (Search Engines)
 This is the name for the Tab Groups being automatically created by the extension, but the tab you created the new tab on is a search engine.<br>
-Available Variables:<br>
+Available Placeholders:<br>
 - `%search_query%` Your search engine search query
   - You searched `cat pics` on Google, the tab group name will be `cat pics`.
 
