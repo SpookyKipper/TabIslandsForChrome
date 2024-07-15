@@ -24,6 +24,7 @@ You may need to download the source, extract it, than load unpacked if you get `
 | No Tab Group Name     | ![](https://github.com/SpookyKipper/TabIslandsForChrome/blob/main/repo_assets/AutoCreateNoName.gif)      | 
 | ------------- | ------------- | 
 | Custom Tab Group Name          | ![](https://github.com/SpookyKipper/TabIslandsForChrome/blob/main/repo_assets/AutoCreateWithName.gif)         | 
+| Search Engine Group Name | ![image](https://github.com/user-attachments/assets/7bd50289-df37-4117-b0f9-3b6bd47615de)
 
 
 
