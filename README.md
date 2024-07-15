@@ -14,6 +14,7 @@ Features:<br>
 - Chrome Stable: 126.0.6478.126 [Linux]
 - Brave	Stable: 1.67.123 (Chromium: 126.0.6478.126) [Linux]
 - Microsoft Edge: 126.0.2592.87 [Win11]
+  
 Get the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/tab-islands-for-chrome/bnkppmpbnnedcfoncmkbekokhmfkhoin)
 ---
 ⚠️ Using any third-party newtab extensions or a custom newtab page may break extension functionality
