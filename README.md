@@ -2,10 +2,10 @@
 ### A recreation of the Automatic Tab Islands creation feature from the Opera One browser
 
 Features:<br>
-✅ Automatic Tab Groups Creation (Custom Tab Group Names)<br>
-  - Default & Search Engine tabs can be set differently!
-✅ Auto Disband Groups with only 1 tabs (togglable)<br>
-✅ Alt+T Shortcut (shortcut changable/deletable)
+- ✅ Automatic Tab Groups Creation (Custom Tab Group Names)<br>
+  - Default & Search Engine tabs can be set differently!<br>
+- ✅ Auto Disband Groups with only 1 tabs (togglable)<br>
+- ✅ Alt+T Shortcut (shortcut changable/deletable)
 
 ---
 👍 Tested **working** on:<br>
@@ -39,9 +39,28 @@ Changable/deletable via `chrome://extensions/shortcuts`
 | Active Tab already in group: <br> Add to existing gruop | ![AltPlusT_InGroup](https://github.com/user-attachments/assets/514657e2-44a1-456c-9875-4f14bd333b8d)
 
 
+
+
 ## Extension Options
 Settings are available via Extension Popup -> "Go to options" button
-![image](https://github.com/user-attachments/assets/9ffbbae1-de42-4fd7-abdb-296c3cc3c5e6)
+### Name for automatically created groups (Default)
+This is the name for the Tab Groups being automatically created by the extension. <br>
+Available Variables: *Experimental*<br>
+- `%domain%`
+  - `google.com` will return `Google`
+  - `web.whatsapp.com` will return `Whatsapp`
+  - `www.google.com.hk` will return `Google`
+### Name for automatically created groups (Search Engines)
+This is the name for the Tab Groups being automatically created by the extension, but the tab you created the new tab on is a search engine.<br>
+Available Variables:<br>
+- `%search_query%` Your search engine search query
+  - You searched `cat pics` on Google, the tab group name will be `cat pics`.
+
+Supported Search Engines: Google, Bing, BraveSearch, Ecosia, DuckDuckGo
+### Disband Groups with only 1 tab in it
+- A toggle to whether automatically ungroup tab groups with only 1 tab in it
+
+
 
 ## Credits
 Extension Icon: Reshot
