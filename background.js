@@ -39,7 +39,7 @@ const checkIsSearchEngine = (url) => {
 // Tab Group Naming Function //
 const nameTabGroup = (groupId, url) => {
     chrome.storage.sync.get(
-        { auto_created_group_name: "%domain%", auto_created_group_name_search_engine: "" },
+        { auto_created_group_name: "%domain%", auto_created_group_name_search_engine: "%search_query%" },
         (items) => {
             let group_name_processed = "";
             if (items.auto_created_group_name != "") {
@@ -94,11 +94,11 @@ chrome.tabs.onCreated.addListener((tab) => {
 
 
 // Disband Tab Islands with only 1 tab //
-chrome.storage.sync.get(
-    { auto_disband_group: true },
-    (items) => {
-        if (items.auto_disband_group) {
-            chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
+chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
+    chrome.storage.sync.get(
+        { auto_disband_group: true },
+        (items) => {
+            if (items.auto_disband_group) {
                 setTimeout(() => {
                     chrome.tabGroups.query({}, (info) => {
                         info.forEach(element => {
@@ -109,12 +109,13 @@ chrome.storage.sync.get(
                             });
                         });
                     })
-                }, 25);
-            });
-
+                }, 50);
+            }
         }
-    }
-);
+    );
+    
+});
+
 
 
 // New tab in group keyboard shortcut //
