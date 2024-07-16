@@ -87,11 +87,11 @@ const groupTabsAction = (tab) => {
 }
 
 // Detect New Tabs //
-setTimeout(() => {
-    chrome.tabs.onCreated.addListener((tab) => {
-        groupTabs(tab);
-    });
-}, 10);
+chrome.tabs.onCreated.addListener((tab) => {
+    groupTabs(tab);
+});
+
+
 
 // Disband Tab Islands with only 1 tab //
 chrome.storage.sync.get(
@@ -120,7 +120,7 @@ chrome.storage.sync.get(
 // New tab in group keyboard shortcut //
 chrome.commands.onCommand.addListener((command) => {
     if (command === "newTabInGroup") {
-        chrome.tabs.query({ active: true }, (tabs) => {
+        chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
             const tab = tabs[0];
             if (!tab.pinned) {
                 chrome.tabs.create({ active: true, index: tab.index + 1 }, (newtab) => {
