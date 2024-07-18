@@ -33,8 +33,31 @@ const checkIsSearchEngine = (url) => {
     const isBrave = url.includes("search.brave.com");
     const isEcosia = url.includes("ecosia.org");
     const isDDG = url.includes("duckduckgo.com");
+    const isAsk = url.includes("ask.com/web");
+    const isYahoo = url.includes("search.yahoo.com");
+    const isSP = url.includes('startpage.com/sp/search');
+    const isBaidu = url.includes("baidu.com/s");
+    const isYT = url.includes("youtube.com/results");
 
-    return (isGoogle || isBing || isBrave || isEcosia || isDDG);
+    return (isGoogle || isBing || isBrave || isEcosia || isDDG || isAsk || isYahoo || isSP || isBaidu || isYT);
+}
+const getSearchQueryUrlParam = (url) => {
+    const isGoogle = url.includes("www.google.com");
+    const isBing = url.includes("bing.com");
+    const isBrave = url.includes("search.brave.com");
+    const isEcosia = url.includes("ecosia.org");
+    const isDDG = url.includes("duckduckgo.com");
+    const isAsk = url.includes("ask.com/web");
+    const isYahoo = url.includes("search.yahoo.com");
+    const isSP = url.includes('startpage.com/sp/search');
+    const isBaidu = url.includes("baidu.com/s");
+    const isYT = url.includes("youtube.com/results");
+
+    if (isGoogle || isBing || isBrave || isEcosia || isDDG || isAsk) return "q";
+    if (isYT) return "search_query";
+    if (isSP) return "query";
+    if (isYahoo) return "p";
+    if (isBaidu) return "wd";
 }
 // Tab Group Naming Function //
 const nameTabGroup = (groupId, url) => {
@@ -45,9 +68,9 @@ const nameTabGroup = (groupId, url) => {
             if (items.auto_created_group_name != "") {
                 group_name_processed = items.auto_created_group_name.replaceAll("%domain%", formatDomainTitle(url));
             }
-            if (checkIsSearchEngine && items.auto_created_group_name_search_engine != "") {
-                const searchQuery = getQueryParam(url, "q");
-                if (typeof (searchQuery) == "string") group_name_processed = items.auto_created_group_name_search_engine.replaceAll("%search_query%", searchQuery);
+            if (checkIsSearchEngine(url) && items.auto_created_group_name_search_engine != "") {
+                const searchQuery = getQueryParam(url, getSearchQueryUrlParam(url));
+                if (typeof (searchQuery) == "string") group_name_processed = items.auto_created_group_name_search_engine.replaceAll("%search_query%", searchQuery).replaceAll("%domain%", formatDomainTitle(url));
             }
             group_name_processed != "" && chrome.tabGroups.update(groupId, { title: group_name_processed })
         }
