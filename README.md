@@ -10,14 +10,17 @@ Features:<br>
 - ✅ Alt+T Shortcut (shortcut changable/deletable)
 
 ---
+## Installation
+Get the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/tab-islands-for-chrome/bnkppmpbnnedcfoncmkbekokhmfkhoin) or [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/tab-islands-for-edge/cmbiocblmmeggepnbhnngjnjkmignimb)
+
+---
 👍 Tested **working** on:<br>
 - Chrome Stable: 126.0.6478.126 [Linux]
 - Brave	Stable: 1.67.123 (Chromium: 126.0.6478.126) [Linux]
 - Microsoft Edge: 126.0.2592.87 [Win11]
-  
-Get the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/tab-islands-for-chrome/bnkppmpbnnedcfoncmkbekokhmfkhoin)
 
 ---
+
 ⚠️ Using any third-party newtab extensions or a custom newtab page may break extension functionality
 
 ---
