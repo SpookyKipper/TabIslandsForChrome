@@ -96,14 +96,14 @@ const checkTab = (tab) => {
 }
 // actually group the tabs //
 const groupTabsAction = (tab) => {
-    if (tab.openerTabId && !(tab.pendingUrl.includes("chrome://")) && !(tab.pendingUrl.includes("extension://")) && !(tab.pendingUrl.includes("ntp.msn")) && tab.groupId === -1) {
+    if (tab.openerTabId && !(tab.pendingUrl.includes("chrome://")) && !(tab.pendingUrl.includes("extension://"))&& !(tab.pendingUrl.includes("edge://")) && !(tab.pendingUrl.includes("ntp.msn")) && tab.groupId === -1) {
         chrome.tabs.get(tab.openerTabId, (openerTab) => {
             if (!openerTab.pinned) {
                 chrome.tabs.group({
                     tabIds: [tab.openerTabId, tab.id]
                 }, (groupId) => {
                     nameTabGroup(groupId, openerTab.url);
-                });
+                }); 
             }
         })
     }
