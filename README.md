@@ -62,7 +62,7 @@ Available Placeholders:<br>
 - `%search_query%` Your search engine search query
   - You searched `cat pics` on Google, the tab group name will be `cat pics`.
 
-Supported Search Engines: Google, Bing, BraveSearch, Ecosia, DuckDuckGo
+Supported Search Engines: Google, Bing, BraveSearch, Ecosia, DuckDuckGo, Ask.com, Yahoo, Startpage, Baidu, YouTube
 ### Disband Groups with only 1 tab in it
 - A toggle to whether automatically ungroup tab groups with only 1 tab in it
 
