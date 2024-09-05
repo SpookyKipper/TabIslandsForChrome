@@ -14,10 +14,25 @@ Features:<br>
 Get the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/tab-islands-for-chrome/bnkppmpbnnedcfoncmkbekokhmfkhoin) or [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/tab-islands-for-edge/cmbiocblmmeggepnbhnngjnjkmignimb)
 
 ---
-👍 Tested **working** on:<br>
-- Chrome Stable: 126.0.6478.126 [Linux]
-- Brave	Stable: 1.67.123 (Chromium: 126.0.6478.126) [Linux]
-- Microsoft Edge: 126.0.2592.87 [Win11]
+# Supported Browsers
+- Google Chrome
+- \[Ungoogled] Chromium
+- Microsoft Edge
+- Brave
+
+Most Chormium forks should work, but may impose limitations or issues.
+
+# Unsupported Browsers
+- Opera One
+  - This is a built-in feature within the browser
+  - Extension conflicts with it
+- Opera GX
+  - UI does not support tab groups
+  - Opera seems to be working on it
+- Kiwi Browser, or any mobile browsers that allows Chrome Extensions
+  - Does not support Desktop Tab Groups API
+- Mozilla Firefox
+  - Obviously
 
 ---
 
