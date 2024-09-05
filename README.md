@@ -20,7 +20,7 @@ Get the extension from the [Chrome Web Store](https://chromewebstore.google.com/
 - Microsoft Edge
 - Brave
 
-Most Chormium forks should work, but may impose limitations or issues.
+Most Chormium forks (aside from the ones below) should work, but may impose limitations or issues.
 
 # Unsupported Browsers
 - Opera One
@@ -29,6 +29,8 @@ Most Chormium forks should work, but may impose limitations or issues.
 - Opera GX
   - UI does not support tab groups
   - Opera seems to be working on it
+- Vivaldi
+  - UI does not support Chrome Tab Groups API
 - Kiwi Browser, or any mobile browsers that allows Chrome Extensions
   - Does not support Desktop Tab Groups API
 - Mozilla Firefox
