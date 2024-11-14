@@ -1,6 +1,6 @@
 # Contextual Tab Groups [<img align="right" src="https://github.com/user-attachments/assets/013973c7-f0ee-4706-986d-e7e3993fc8d6">](https://chromewebstore.google.com/detail/tab-islands-for-chrome/bnkppmpbnnedcfoncmkbekokhmfkhoin)
 
-### Tab groups by context, automatic groups creation. Inspired by Opera One.
+### Group tabs by context for you automatically. Inspired by Opera One.
 
 Features:<br>
 - ✅ Automatic Tab Groups Creation (Custom Tab Group Names)<br>
