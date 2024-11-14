@@ -31,10 +31,8 @@ Most Chormium forks (aside from the ones below) should work, but may impose limi
   - Opera seems to be working on it
 - Vivaldi
   - Does not support Chrome Tab Groups API
-- Kiwi Browser, or any mobile browsers that allows Chrome Extensions
+- Kiwi, Quetta, or any mobile browsers that allows Chrome Extensions
   - Does not support Desktop Tab Groups API
-- Mozilla Firefox
-  - Obviously
 
 ---
 
@@ -86,4 +84,4 @@ Supported Search Engines: Google, Bing, BraveSearch, Ecosia, DuckDuckGo, Ask.com
 
 
 ## Credits
-Extension Icon: Reshot
+Extension Idea: [Opera One Tab Islands](https://www.opera.com/features/tab-islands)
