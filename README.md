@@ -1,4 +1,4 @@
-# Tab Islands for Chrome [<img align="right" src="https://github.com/user-attachments/assets/013973c7-f0ee-4706-986d-e7e3993fc8d6">](https://chromewebstore.google.com/detail/tab-islands-for-chrome/bnkppmpbnnedcfoncmkbekokhmfkhoin)
+# Contextual Tab Groups [<img align="right" src="https://github.com/user-attachments/assets/013973c7-f0ee-4706-986d-e7e3993fc8d6">](https://chromewebstore.google.com/detail/tab-islands-for-chrome/bnkppmpbnnedcfoncmkbekokhmfkhoin)
 
 ### A recreation of the Automatic Tab Islands creation feature from the Opera One browser
 
@@ -7,7 +7,7 @@ Features:<br>
   - Default & Search Engine tabs can be set differently!
   - Supports setting Tab Group names to your search query!
 - ✅ Auto Disband Groups with only 1 tabs (togglable)<br>
-- ✅ Alt+T Shortcut (shortcut changable/deletable)
+- ✅ Alt+T Shortcut to quickly create a new group (shortcut changable/deletable)
 
 ---
 ## Installation
@@ -28,7 +28,6 @@ Most Chormium forks (aside from the ones below) should work, but may impose limi
   - Extension conflicts with it
 - Opera GX
   - UI does not support tab groups
-  - Opera seems to be working on it
 - Vivaldi
   - Does not support Chrome Tab Groups API
 - Kiwi, Quetta, or any mobile browsers that allows Chrome Extensions

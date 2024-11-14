@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Tab Islands for Chrome",
-  "description": "A recreation of the Automatic Tab Islands creation feature from the Opera One browser.",
-  "version": "1.5",
+  "name": "Contextual Tab Groups - Auto create groups when opening a new tab",
+  "short_name": "Contextual Tab Groups",
+  "description": "Group tabs by context for you automatically. Inspired by Opera One.",
+  "version": "1.5.1",
   "action": {
     "default_popup": "popup.html",
     "default_icon": "tab_islands.png"
@@ -27,7 +28,7 @@
   },
   "commands": {
       "newTabInGroup": {
-         "description": "New tab in Island/Group",
+         "description": "New tab in Group / Create a new group",
          "suggested_key": {
             "default": "Alt+T"
          }
