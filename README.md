@@ -14,11 +14,12 @@ Features:<br>
 Get the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/tab-islands-for-chrome/bnkppmpbnnedcfoncmkbekokhmfkhoin) or [Microsoft Edge Addons](https://microsoftedge.microsoft.com/addons/detail/tab-islands-for-edge/cmbiocblmmeggepnbhnngjnjkmignimb)
 
 ---
-# Supported Browsers
+# Fully Supported Browsers
 - Google Chrome
 - \[Ungoogled] Chromium
 - Microsoft Edge
 - Brave
+- Naver Whale
 
 Most Chormium forks (aside from the ones below) should work, but may impose limitations or issues.
 
